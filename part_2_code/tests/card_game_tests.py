@@ -12,7 +12,7 @@ class TestCardGame(unittest.TestCase):
         self.card4 = Card("Club", 4)
         self.cards = [self.card1, self.card2, self.card3, self.card4]
 
-        self.card_game = CardGame
+        self.card_game = CardGame()
 
     def test_check_for_ace__true(self):
         result = self.card_game.check_for_ace(self.card1)
@@ -21,7 +21,7 @@ class TestCardGame(unittest.TestCase):
     
     def test_check_for_ace__false(self):
         result = self.card_game.check_for_ace(self.card2)
-        self.assertEqual(True, result)
+        self.assertEqual(False, result)
 
     def test_highest_card(self):
         result = self.card_game.highest_card(self.card3, self.card4)
